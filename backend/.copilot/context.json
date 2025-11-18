@@ -1,0 +1,90 @@
+{
+    "project": "E-Commerce Refactor using Node.js, Express, Supabase, and GitHub Copilot",
+    "goal": "Refactor and enhance an e-commerce app backend using modern best practices. Include authentication (login, register), product APIs, wishlist, and integration with Supabase PostgreSQL.",
+    "tech_stack": [
+        "Node.js",
+        "Express",
+        "Supabase",
+        "PostgreSQL",
+        "dotenv",
+        "Joi for validation",
+        "JWT",
+         "Jest",
+        "Supertest"
+    ],
+    "structure": {
+        "modules": {
+            "users": [
+                "controller.js",
+                "routes.js",
+                "schema.js",
+                "users.js"
+            ],
+            "auth": [
+                "controller.js",
+                "routes.js",
+                "schema.js",
+                "auth.js"
+            ],
+            "products": [
+                "controller.js",
+                "routes.js",
+                "schema.js",
+                "products.js"
+            ],
+            "wishlist": [
+                "controller.js",
+                "routes.js",
+                "schema.js",
+                "wishlist.js"
+            ]
+        },
+        "common": [
+            "config/supabaseClient.js",
+            "middleware/authMiddleware.js"
+        ],
+         "tests": {
+            "backend": "tests/* using Jest + Supertest for API testing"
+        }
+    },
+    "coding_guidelines": [
+        "Use ES modules (import/export)",
+        "Use async/await for all database operations",
+        "Include proper error handling and response messages",
+        "Use Joi validation for inputs",
+        "Each module should have controller.js, routes.js, schema.js, and model.js if needed",
+        "Keep controller and routes separated",
+        "All API responses must be JSON formatted with status and message"
+    ],
+    "files": {
+        "config/supabaseClient.js": "Initialize Supabase client using @supabase/supabase-js and dotenv",
+        "modules/users": "Contains user CRUD and authentication logic"
+    },
+     "testing": {
+        "framework": "Jest + Supertest",
+        "coverage_targets": [
+            "User register API",
+            "User login API",
+            "Get products API",
+            "Add wishlist",
+            "Remove wishlist",
+            "List wishlist"
+        ],
+        "notes": [
+            "Use mocked Supabase client for unit tests",
+            "Use Supertest for route-level API tests",
+            "Test success and failure responses"
+        ]
+    },
+    "copilot_usage": {
+        "assist_in": [
+            "Assist in writing clean Express routes and controllers",
+            "Suggest optimizations for Supabase queries",
+            "Generate validation schemas with Joi",
+            "Suggest improvements during pull request reviews",
+            "Generate test cases for backend",
+            "Auto-complete test boilerplate (Jest, RTL)"
+        ],
+        "review_pull_requests": true
+    }
+}
